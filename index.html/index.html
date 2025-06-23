@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bancolombia VIP</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('logo3d.png') no-repeat center center fixed;
+      background-size: cover;
+      background-color: #0033a0;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 420px;
+      margin: 100px auto;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #0033a0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #0051ff;
+    }
+
+    h1, h2, h3 {
+      color: #0033a0;
+    }
+
+    .logo-vip {
+      width: 200px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .vip-container {
+      background: url('logo3d.png') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .vip-card {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+      width: 450px;
+      text-align: center;
+      border: 4px solid #f1c40f;
+    }
+
+    .mensaje-premio .emoji {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .titulo-vip {
+      color: #0033a0;
+      font-size: 26px;
+      margin: 10px 0;
+      text-transform: uppercase;
+    }
+
+    .submensaje {
+      margin-top: 10px;
+    }
+
+    .monto-fijo {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 15px 0;
+      color: #000;
+      background-color: #f2f2f2;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+
+    .datos-vip {
+      background-color: #f9f9f9;
+      border-left: 5px solid #0033a0;
+      margin-top: 25px;
+      padding: 15px;
+      text-align: left;
+      border-radius: 10px;
+    }
+
+    .link-oficial {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #f1c40f;
+      color: #000;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .link-oficial:hover {
+      background-color: #ffdb4d;
+    }
+
+    #mensajeTransferencia {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="loginForm">
+    <img src="logobonito1.jpg" alt="Logo Bancolombia" class="logo-vip">
+    <h1>Bienvenido a Grupo Bancolombia</h1>
+    <h2>Acceso VIP Bancolombia</h2>
+    <input type="text" id="username" placeholder="Usuario"><br>
+    <input type="password" id="password" placeholder="Contraseña"><br>
+    <button onclick="login()">Ingresar</button>
+    <p id="loginError" class="error"></p>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (username === "553344655" && password === "1964") {
+        document.body.innerHTML = `
+          <div class="vip-container">
+            <div class="vip-card">
+              <img src="logobonito1.jpg" alt="Logo Bancolombia" class="logo-vip">
+
+              <div class="mensaje-premio">
+                <div class="emoji">🎉💰</div>
+                <h2 class="titulo-vip">¡Hola Ricardo Peña!</h2>
+                <p class="submensaje"><strong>La liquidación de tu premio ya está lista.</strong></p>
+              </div>
+
+              <div class="monto-fijo">13,134,000,000 COP</div>
+              <button onclick="mostrarMensaje()">Transferir</button>
+              <p id="mensajeTransferencia"></p>
+
+              <div class="datos-vip">
+                <h3>🛡️ Datos Cliente VIP</h3>
+                <p><strong># de cuenta:</strong> 4500</p>
+                <p><strong>Ruta #:</strong> 0026</p>
+                <p><strong>SWIFT/BIC CODE:</strong> FTBMUS44</p>
+              </div>
+
+              <a href="https://www.bancolombia.com" target="_blank" class="link-oficial">Ir al sitio oficial de Bancolombia</a>
+            </div>
+          </div>
+        `;
+      } else {
+        document.getElementById('loginError').textContent = "Usuario o contraseña incorrectos";
+      }
+    }
+
+    function mostrarMensaje() {
+      const mensaje = document.getElementById("mensajeTransferencia");
+      mensaje.innerHTML = "✅ Transferencia en proceso.<br><strong>Falta la aprobación del Contralor General de la República de Colombia, el señor Carlos Hernán Rodríguez.</strong><br><br>📞 Comuníquese con el área encargada de Bancolombia.";
+      mensaje.style.color = "#006400";
+    }
+  </script>
+</body>
+</html>
